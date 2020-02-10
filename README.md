@@ -30,13 +30,10 @@ Lettuce eat! is a site that will users to post images of food and their recipe o
 
 #### Wireframes
 
-![homepage](images/homepage.jpeg)
-
 ![login](images/login.jpeg)
 ![register](images/register.jpeg)
-
+![homepage](images/homepage.jpeg)
 ![detail-page](images/detail-page.jpeg)
-
 
 #### ERD Model
 ![ERD](images/ERD.jpeg)
