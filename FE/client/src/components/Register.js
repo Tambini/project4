@@ -10,7 +10,7 @@ export default class Register extends Component {
     }
   }
 
-  handleCHange = (e) => {
+  handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({
       [name]: value
@@ -21,6 +21,7 @@ export default class Register extends Component {
   render() {
     return (
       <div>
+        {this.props.errorText && <p>{this.props.errorText} </p>}
         <form onSubmit={(e) => this.props.handleRegister(e, this.state)}>
           <h2>Register</h2>
           <label htmlFor="name"> name</label>
@@ -28,23 +29,23 @@ export default class Register extends Component {
             type="text"
             name="name"
             value={this.state.name}
-            onChange={this.handleCHange}
+            onChange={this.handleChange}
           />
-          <label htmlFor="name"> email</label>
+          <label htmlFor="email"> email</label>
           <input
             type="text"
             name="email"
             value={this.state.email}
-            onChange={this.handleCHange}
+            onChange={this.handleChange}
           />
-          <label htmlFor="name"> password</label>
+          <label htmlFor="password"> password</label>
           <input
             type="password"
             name="password"
             value={this.state.password}
-            onChange={this.handleCHange}
+            onChange={this.handleChange}
           />
-          <button> Submit!</button>
+          <button> Submit</button>
         </form>
       </div>
     )
