@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cd3302d-721f-495a-a7e6-8e64d811eceb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lettuce_eat/app/auth/authenticate_user.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lettuce_eat/app/auth/authorize_api_request.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lettuce_eat/app/controllers/concerns/exception_handler.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lettuce_eat/app/controllers/concerns/response.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lettuce_eat/app/lib/json_web_token.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lettuce_eat/app/lib/messages.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Be.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Be.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d16e16c-e36c-4974-aff0-526257dedb6d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d16e16c-e36c-4974-aff0-526257dedb6d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FE/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FE/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FE/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FE/client/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/src/components/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FE/client/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/src/components/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FE/client/src/components/services/api_helper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FE/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +60,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/lettuce_eat" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1Xfpt19763NRPO4oU2W5dN8OVGi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -64,8 +72,15 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="SvnConfiguration">
@@ -79,6 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581447213849</updated>
       <workItem from="1581447215040" duration="903000" />
+      <workItem from="1581612687449" duration="5114000" />
     </task>
     <servers />
   </component>
