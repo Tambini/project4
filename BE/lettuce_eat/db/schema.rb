@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_191418) do
+ActiveRecord::Schema.define(version: 2020_02_13_211340) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
-    t.integer "recipes_id", null: false
+    t.integer "recipes_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipes_id"], name: "index_categories_on_recipes_id"

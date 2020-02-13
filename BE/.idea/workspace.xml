@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cd3302d-721f-495a-a7e6-8e64d811eceb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Be.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Be.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d16e16c-e36c-4974-aff0-526257dedb6d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d16e16c-e36c-4974-aff0-526257dedb6d.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE/client/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/src/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE/client/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/src/components/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE/client/src/components/services/api_helper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FE/client/src/services/api_helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/src/services/api_helper.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +36,20 @@
         <item name="development" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="development" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="categories: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="development" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="recipes: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -94,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581447213849</updated>
       <workItem from="1581447215040" duration="903000" />
-      <workItem from="1581612687449" duration="5114000" />
+      <workItem from="1581612687449" duration="13891000" />
     </task>
     <servers />
   </component>
@@ -110,5 +112,9 @@
       <screen x="0" y="23" width="1680" height="958" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.23.1680.958@0.23.1680.958" timestamp="1581447658070" />
+    <state x="543" y="141" width="667" height="729" key="find.popup" timestamp="1581631492183">
+      <screen x="0" y="23" width="1680" height="961" />
+    </state>
+    <state x="543" y="141" width="667" height="729" key="find.popup/0.23.1680.961@0.23.1680.961" timestamp="1581631492183" />
   </component>
 </project>

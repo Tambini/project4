@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :update, :destroy]
+  skip_before_action :authorize_request
+
   # GET /category
   def index
     @categories = Category.all
@@ -10,7 +12,7 @@ class CategoriesController < ApplicationController
     @category = Category.create!(category_params)
     json_response(@category, :created)
   end
-  # GET /categories/:id
+  # GET /categories/id
   def show
     json_response(@category)
   end
@@ -29,6 +31,7 @@ class CategoriesController < ApplicationController
     # whitelist params
     params.permit(:name)
   end
+
   def set_category
     @category = Category.find(params[:id])
   end

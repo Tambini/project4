@@ -7,3 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 
+Category.create(title:"Greek")
+Category.create(title:"Thai")
+Category.create(title:"Peruvian")
+Category.create(title:"Italian")
+
+
+
+
+

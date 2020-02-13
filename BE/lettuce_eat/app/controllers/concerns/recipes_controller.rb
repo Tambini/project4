@@ -1,50 +1,54 @@
-class DoodlesController < ApplicationController
-  before_action :set_category
-  before_action :set_category_recipe, only: [:show, :update, :destroy]
+class RecipesController < ApplicationController
+  before_action :set_recipe, only: [:show, :update, :destroy]
+  skip_before_action :authorize_request
 
   # GET /categories/:category_id/recipes
   def index
-    @recipes = current_user.recipes
-    puts "Showing all the recipes"
+    @recipes = Recipe.all
     json_response(@recipes)
+  end
 
+  def private_index
+    # @recipes = current_user.recipes
+    # json_response(@recipes)
+    puts "hello"
   end
-  # GET /categories/:category_id/recipes/:id
-  def show
-    puts "Showing all the doodles"
-    json_response(@recipe)
-  end
+
   # POST /categories/:category_id/recipes
   def create
     puts current_user
-    @category = current_user.doodles.create!(doodle_params)
-    puts @category
-    # json_response(@category, :created)
-    json_response(status: "SUCCESS", message: 'recipe created successfully.')
+    @recipe = current_user.recipes.create!(recipe_params)
+    json_response(@recipe, :created)
   end
+
+  # GET /categories/:category_id/recipes/:id
+  def show
+    json_response(@recipe)
+  end
+
   # PUT /categories/:category_id/recipes/:id
   def update
     @recipe.update(recipe_params)
-    json_response(status: 'SUCCESS', message: 'recipe updated successfully.')
+    json_response(status: 'SUCCESS', message: 'recipe updated')
   end
+
   # DELETE /categories/:category_id/recipes/:id
   def destroy
     @recipe.destroy
-    json_response(status: 'SUCCESS', message: 'recipe deleted successfully.')
+    json_response(status: 'SUCCESS', message: 'recipe deleted')
   end
-  private
-  def doodle_params
-    params.permit(:title, :path,  :category_id, :recipe, :current_user)
-  end
-  def set_category
-    puts "calling set_category"
-    @category = Category.find(params[:category_id])
-  end
-  def set_category_doodle
-    if @category
-      @recipe = @category.recipes.find_by!(id: params[:id])
-    end
-    @recipes = current_user.recipes
 
+  private
+
+  def recipe_params
+    params.permit(:dish_name, :image, :time, :directions, :created_by, :ingredients)
   end
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
+
+
+
 end
