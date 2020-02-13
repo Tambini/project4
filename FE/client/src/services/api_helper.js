@@ -38,3 +38,4 @@ export const verifyUser = () => {
     api.defaults.headers.common.authorization = `Bearer ${token}`;
   }
 }
+
