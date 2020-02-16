@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2cd3302d-721f-495a-a7e6-8e64d811eceb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE/client/src/services/api_helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FE/client/src/services/api_helper.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +50,13 @@
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
         <item name="recipes: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="development" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="users: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -96,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581447213849</updated>
       <workItem from="1581447215040" duration="903000" />
-      <workItem from="1581612687449" duration="13891000" />
+      <workItem from="1581612687449" duration="33917000" />
     </task>
     <servers />
   </component>
@@ -104,6 +110,12 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="341" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581702338915">
+      <screen x="0" y="23" width="1680" height="965" />
+    </state>
+    <state x="341" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.961@0.23.1680.961" timestamp="1581636263543" />
+    <state x="341" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.963@0.23.1680.963" timestamp="1581702087802" />
+    <state x="341" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.965@0.23.1680.965" timestamp="1581702338915" />
     <state x="648" y="311" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581447953789">
       <screen x="0" y="23" width="1680" height="958" />
     </state>
@@ -112,9 +124,14 @@
       <screen x="0" y="23" width="1680" height="958" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.23.1680.958@0.23.1680.958" timestamp="1581447658070" />
-    <state x="543" y="141" width="667" height="729" key="find.popup" timestamp="1581631492183">
-      <screen x="0" y="23" width="1680" height="961" />
+    <state x="543" y="141" width="667" height="731" key="find.popup" timestamp="1581701649090">
+      <screen x="0" y="23" width="1680" height="963" />
     </state>
     <state x="543" y="141" width="667" height="729" key="find.popup/0.23.1680.961@0.23.1680.961" timestamp="1581631492183" />
+    <state x="543" y="141" width="667" height="731" key="find.popup/0.23.1680.963@0.23.1680.963" timestamp="1581701649090" />
+    <state x="579" y="154" width="670" height="676" key="search.everywhere.popup" timestamp="1581698607157">
+      <screen x="0" y="23" width="1680" height="963" />
+    </state>
+    <state x="579" y="154" width="670" height="676" key="search.everywhere.popup/0.23.1680.963@0.23.1680.963" timestamp="1581698607157" />
   </component>
 </project>
