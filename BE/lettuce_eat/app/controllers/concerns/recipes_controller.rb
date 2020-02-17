@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_user, only: [:create, :index]
   before_action :set_category, only: [:show, :update, :destroy, :create]
   # before_action :set_recipe_category, only: [:personal_index, :recipes_by_category, :show, :update, :destroy, :create]
-  skip_before_action :authorize_request
+  skip_before_action :authorize_request, only: [:all_recipes :index]
 
   # GET /categories/:category_id/recipes
   def index
@@ -49,7 +49,8 @@ class RecipesController < ApplicationController
   # DELETE /categories/:category_id/recipes/:id
   def destroy
     @recipe = Recipe.find(params[:id])
-    @recipe.destroy
+    @category = Category.find(params[:category_id])
+    @recipe.delete
     json_response(status: 'Success', message: 'recipe deleted')
   end
 
