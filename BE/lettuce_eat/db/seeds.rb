@@ -8,9 +8,17 @@
 #
 
 Category.create(title:"Greek")
-Category.create(title:"Thai")
-Category.create(title:"Peruvian")
 Category.create(title:"Italian")
+Category.create(title:"Cajun and Creole")
+Category.create(title:"Mediterranean")
+Category.create(title:"English")
+Category.create(title:"Chinese")
+Category.create(title:"Spanish")
+Category.create(title:"Moroccan")
+Category.create(title:"Peruvian")
+Category.create(title:"Cuban")
+Category.create(title:"Spanish")
+Category.create(title:"Japanese")
 
 
 
