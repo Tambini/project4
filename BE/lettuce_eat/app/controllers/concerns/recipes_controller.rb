@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_user, only: [:create, :index]
   before_action :set_category, only: [:show, :update, :destroy, :create]
   # before_action :set_recipe_category, only: [:personal_index, :recipes_by_category, :show, :update, :destroy, :create]
-  skip_before_action :authorize_request, only: [:all_recipes :index]
+  skip_before_action :authorize_request, only: [:all_recipes, :index]
 
   # GET /categories/:category_id/recipes
   def index
