@@ -1,7 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_user, only: [:create, :index]
   before_action :set_category, only: [:show, :update, :destroy, :create]
-  # before_action :set_recipe_category, only: [:personal_index, :recipes_by_category, :show, :update, :destroy, :create]
   skip_before_action :authorize_request, only: [:all_recipes, :index]
 
   # GET /categories/:category_id/recipes
@@ -15,9 +14,7 @@ class RecipesController < ApplicationController
 
   # GET /categories/:category_id/recipes
   def personal_recipes
-    @user = User.find(params[:user_id])
-    puts @user.id
-    @recipes = Recipe.where(user_id: @user)
+    @recipes = Recipe.where(user_id: current_user.id)
     json_response(@recipes)
   end
 
@@ -29,7 +26,7 @@ class RecipesController < ApplicationController
 
   # POST /categories/:category_id/recipes
   def create
-    @recipe = @category.recipes.create(recipe_params)
+    @recipe = @category.recipes.create(recipe_params.merge(user_id: current_user.id))
     json_response(@recipe)
   end
 
@@ -49,15 +46,14 @@ class RecipesController < ApplicationController
   # DELETE /categories/:category_id/recipes/:id
   def destroy
     @recipe = Recipe.find(params[:id])
-    @category = Category.find(params[:category_id])
-    @recipe.delete
+    @recipe.destroy
     json_response(status: 'Success', message: 'recipe deleted')
   end
 
   private
 
   def recipe_params
-    params.permit(:dish_name, :image, :time, :directions, :user_id, :ingredients, :category_id)
+    params.permit(:dish_name, :image, :time, :directions, :ingredients, :category_id)
   end
 
   def set_category
