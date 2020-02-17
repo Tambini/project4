@@ -35,6 +35,13 @@ class CreateRecipe extends Component {
           value={this.state.image}
           onChange={this.handleChange}
         />
+        <label htmlFor="title">Time</label>
+        <input
+          type="integerr"
+          name="time"
+          value={this.state.time}
+          onChange={this.handleChange}
+        />
         <label htmlFor="title">Ingredients</label>
         <input
           type="text"
@@ -45,7 +52,7 @@ class CreateRecipe extends Component {
         <label htmlFor="title">Description</label>
         <input
           type="text"
-          name="title"
+          name="description"
           value={this.state.description}
           onChange={this.handleChange}
         />
@@ -55,4 +62,4 @@ class CreateRecipe extends Component {
   }
 }
 
-export default CreatePostForm;
+export default CreateRecipe;
