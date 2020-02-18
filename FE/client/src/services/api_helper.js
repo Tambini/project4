@@ -11,6 +11,7 @@ export const loginUser = async (loginData) => {
   console.log(resp);
   api.defaults.headers.common.authorization = `Bearer ${resp.data.auth_token}`;
   localStorage.setItem('authToken', resp.data.auth_token);
+  localStorage.setItem('id', resp.data.user.id);
   return resp.data.user;
 }
 
@@ -21,6 +22,7 @@ export const registerUser = async (registerData) => {
   localStorage.setItem('authToken', resp.data.auth_token);
   localStorage.setItem('name', resp.data.user.name);
   localStorage.setItem('email', resp.data.user.email);
+  localStorage.setItem('id', resp.data.user.id);
   return resp.data.user;
 
 }
@@ -32,26 +34,27 @@ export const verifyUser = () => {
   }
 }
 
+export const createRecipe = async (categoryId, postData) => {
+
+  const resp = await api.post(`/categories/${categoryId}/recipes`, postData);
+  return resp.data;
+}
+
 
 export const allRecipes = async () => {
-  const resp = await api.get(`/categories/${id}/recipes`);
+  const resp = await api.get(`/recipes`);
   return resp.data;
 };
 
 
-export const getRecipe = async (id) => {
-  const resp = away.api.get(`/categories/${id}/recipes/${id}`)
+export const getRecipe = async (categoryId, recipeId) => {
+  const resp = await api.get(`/categories/${categoryId}/recipes/${recipeId}`)
   return resp.data
 }
 
-export const createRecipe = async recipeData => {
-  const resp = await api.post(`/categories/${id}/recipes`, recipeData);
-  return resp.data;
-};
 
-
-export const updatePost = async (id, recipeData) => {
-  const resp = await api.put(`/categories/${id}/recipes/${id}`, recipeData);
+export const updateRecipe = async (categoryId, recipeId, postData) => {
+  const resp = await api.put(`/categories/${categoryId}/recipes/${recipeId}`, postData);
   return resp
 };
 
