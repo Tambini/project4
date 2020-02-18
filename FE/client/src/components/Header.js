@@ -1,6 +1,6 @@
 import React from 'react'
-import { Route, Link, withRouter } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
+import logo from '../images/logo.png'
 
 const Header = (props) => {
   return (
@@ -12,6 +12,7 @@ const Header = (props) => {
         </div>
         :
         <nav>
+          <img src={logo} />
           <ul>
             <Link to="/register"> <li>Register</li></Link>
             <Link to="/login"> <li>Login</li></Link>
