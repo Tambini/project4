@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
 
   end
 
-  # GET /categories/:category_id/recipes
+  # GET /user/recipes
   def personal_recipes
     @recipes = Recipe.where(user_id: current_user.id)
     json_response(@recipes)

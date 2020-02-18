@@ -4,7 +4,11 @@ class CreateRecipe extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: ""
+      dishName: "",
+      image: "",
+      time: "",
+      ingredients: "",
+      description: ""
     };
   }
 
@@ -21,23 +25,24 @@ class CreateRecipe extends Component {
           this.props.createRecipe(this.state);
         }}
       >
-        <label htmlFor="title">Title</label>
+        <label htmlFor="title">Dish Name</label>
         <input
           type="text"
-          name="title"
-          value={this.state.title}
+          name="dish_name"
+          value={this.state.dish_name}
           onChange={this.handleChange}
+          required
         />
         <label htmlFor="title">Image</label>
         <input
-          type="image"
+          type="text"
           name="image"
           value={this.state.image}
           onChange={this.handleChange}
         />
         <label htmlFor="title">Time</label>
         <input
-          type="integerr"
+          type="integer"
           name="time"
           value={this.state.time}
           onChange={this.handleChange}
