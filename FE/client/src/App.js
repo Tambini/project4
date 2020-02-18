@@ -5,9 +5,13 @@ import { Route, Link, withRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Register from './components/Register';
-import Login from './components/Login'
+import Login from './components/Login';
+
 
 import './App.css';
+import RecipeDetail from './components/RecipeDetail';
+import UserRecipes from './components/UserRecipes';
+import AllRecipes from './components/AllRecipes';
 
 class App extends Component {
   constructor(props) {
@@ -36,7 +40,7 @@ class App extends Component {
     e.preventDefault();
     const currentUser = await loginUser(loginData);
     this.setState({ currentUser });
-    this.props.history.push("/recipes");
+    this.props.history.push("/user/recipes");
   }
 
   handleLogout = () => {
@@ -53,30 +57,21 @@ class App extends Component {
     if (localStorage.getItem('authToken')) {
       const name = localStorage.getItem('name');
       const email = localStorage.getItem('email');
-      const user = { name, email };
+      const id = localStorage.getItem('id');
+      const user = { name, email, id };
       user && this.setState({
         currentUser: user
       })
     }
   }
 
+
+
   render() {
     return (
 
       <div className="App" >
         <Header />
-        {this.state.currentUser ?
-          <div>
-            <h1>Welcome, {this.state.currentUser.name}</h1>
-            <button onClick={this.handleLogout}>Logout</button>
-          </div>
-          :
-          <nav>
-            <Link to="/register"> <button>Register</button></Link>
-            <Link to="/login"> <button>Login</button></Link>
-
-          </nav>
-        }
 
         <Route path="/register" render={() => (
           <Register
@@ -90,6 +85,13 @@ class App extends Component {
             errorMessage={this.state.errorText}
           />
         )} />
+        <Route path="/recipes" render={() =>
+          <AllRecipes />
+        } />
+        <Route path="user/:id/recipes" render={() =>
+          <UserRecipes />
+        } />
+
 
         <Footer />
 
