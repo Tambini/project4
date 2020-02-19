@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       email: "",
       password: ""
-    }
+    };
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-  }
+  };
 
   render() {
     return (
       <div className="login-form-wrapper">
-        <form onSubmit={(e) => this.props.handleLogin(e, this.state)}>
+        <form onSubmit={e => this.props.handleLogin(e, this.state)}>
           <h2>Login</h2>
           <label htmlFor="email">Email</label>
           <input
@@ -39,6 +39,8 @@ export default class LoginForm extends Component {
           <Link to="/register">Register</Link>
         </form>
       </div>
-    )
+    );
   }
 }
+
+export default withRouter(LoginForm);
