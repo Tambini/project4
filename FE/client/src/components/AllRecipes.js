@@ -1,22 +1,21 @@
 import React, { Component } from "react";
-import { allRecipes } from '../services/api_helper.js'
-import { Route, Link, withRouter } from 'react-router-dom';
+import { allRecipes } from "../services/api_helper.js";
+import { Route, Link, withRouter } from "react-router-dom";
 
 class AllRecipes extends Component {
   constructor(props) {
     super(props);
     this.state = {
       recipes: []
-    }
+    };
   }
 
   componentDidMount = async () => {
-    const recipes = await allRecipes()
+    const recipes = await allRecipes();
     this.setState({
       recipes
-
-    })
-  }
+    });
+  };
 
   render() {
     return (
@@ -32,9 +31,8 @@ class AllRecipes extends Component {
           ))}
         </div>
       </div>
-
-    )
+    );
   }
 }
 
-export default AllRecipes;
+export default withRouter(AllRecipes);
