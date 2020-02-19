@@ -71,3 +71,6 @@ li{
   flex-direction: column;
   align-items: center;
 }
+.carousel-image{
+  max-height: 800px;
+}
