@@ -12,6 +12,8 @@ import './App.css';
 import RecipeDetail from './components/RecipeDetail';
 import UserRecipes from './components/UserRecipes';
 import AllRecipes from './components/AllRecipes';
+import CreateRecipe from './components/CreateRecipe'
+import UpdateRecipe from './components/UpdateRecipe';
 
 class App extends Component {
   constructor(props) {
@@ -69,8 +71,16 @@ class App extends Component {
 
   render() {
     return (
-
       <div className="App" >
+        {this.state.currentUser ? (
+          <div className="welcome-message">
+            <h1>Welcome, {localStorage.getItem('name')}</h1>
+            <button onClick={this.handleLogout}>Logout</button>
+          </div>
+        ) : (
+            <div>
+              <h1>please login to see your recipes</h1>
+            </div>)}
         <Header />
 
         <Route path="/register" render={() => (
@@ -85,14 +95,17 @@ class App extends Component {
             errorMessage={this.state.errorText}
           />
         )} />
-        <Route path="/recipes" render={() =>
+        <Route exact path="/recipes" render={() =>
           <AllRecipes />
         } />
-        <Route path="user/:id/recipes" render={() =>
-          <UserRecipes />
+
+        <Route path="/user/recipes" render={(testProps) =>
+          <UserRecipes {...testProps} />
+
         } />
-
-
+        <Route path="/recipes/new" component={CreateRecipe} />
+        <Route path="/recipes/detail/:category/:id" component={RecipeDetail} />
+        {/* <Route path="/recipes/update" component={UpdateRecipe} /> */}
         <Footer />
 
       </div>

@@ -42,7 +42,17 @@ class UpdateRecipe extends Component {
       <form
         onSubmit={e => this.props.updatePost(e, this.props.postId, this.state)}
       >
-
+        <label htmlFor="category"> Category</label>
+        <div className="category-select" >
+          <select onChange={this.handleDropdown}>
+            <option> Please select one</option>
+            <option name="Greek" value={1}> Greek</option>
+            <option name="Italian" value={2}> Thai</option>
+            <option name="Cajon and Creole" value={3}>Spanish</option>
+            <option name="Mediterranean" value={4}> Mexican</option>
+            <option name="English" value={5}> American</option>
+          </select>
+        </div>
         <label htmlFor="title">Dish Name</label>
         <input
           type="text"

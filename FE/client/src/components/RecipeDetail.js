@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-import { Route, withRouter } from "react-router-dom"
+import { Route, Link, withRouter } from "react-router-dom"
 import {
-  createRecipe, verifyUser, updateRecipe, allRecipes, getRecipe
+  getRecipe, verifyUser
 } from "../services/api_helper"
 
-import AllRecipes from './AllRecipes'
-import CreateRecipe from './CreateRecipe'
-import UpdateRecipe from './UpdateRecipe'
-import UserRecipes from "./UserRecipes";
+
 
 class RecipeDetail extends Component {
   constructor(props) {
@@ -20,36 +17,31 @@ class RecipeDetail extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props)
     verifyUser();
-    this.viewAllRecipes()
+    this.getSingleRecipe(this.props.match.params.category, this.props.match.params.id);
   }
 
-  viewAllRecipes = async () => {
-    const recipes = await allRecipes();
+
+
+
+  getSingleRecipe = async (categoryId, recipeId) => {
+    const recipes = await getRecipe(categoryId, recipeId)
     this.setState({ recipes })
-  }
-
-  viewUserRecipes = async () => {
-    const recipes = await getRecipe()
-    this.setState({ recipes })
-  }
-
-  createRecipe = async recipeData => {
-    const newRecipe = await createRecipe(recipeData)
-    this.setState({
-      recipes: [...this.state.recipes, newRecipe]
-    })
-    this.props.history.push(`/user/recipe`)
-  }
-
-  updateRecipe = async (e, recipe_id, recipeData) => {
-    e.preventDefault();
   }
 
   render() {
     return (
       <div>
-        <CreateRecipe />
+        <h1>{this.state.recipes.dish_name}</h1>
+        <h1>{this.state.recipes.image}</h1>
+        <h1>{this.state.recipes.time}</h1>
+        <h1>{this.state.recipes.ingredients}</h1>
+        <h1>{this.state.recipes.directions}</h1>
+        <Link to="/recipes/update">
+          <button>Update </button>
+          <button>Delete</button>
+        </Link>
       </div>
 
 
