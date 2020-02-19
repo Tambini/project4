@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_user, only: [:create, :index]
+  before_action :set_user, only: [:create, :update, :destroy, :personal_recipes]
   before_action :set_category, only: [:show, :update, :destroy, :create]
   skip_before_action :authorize_request, only: [:all_recipes, :index]
 
@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
   # GET /user/recipes
   def personal_recipes
     @recipes = Recipe.where(user_id: current_user.id)
+  
     json_response(@recipes)
   end
 
