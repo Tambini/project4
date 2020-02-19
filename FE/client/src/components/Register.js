@@ -1,28 +1,31 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
-export default class Register extends Component {
+class Register extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       name: "",
       email: "",
       password: ""
-    }
+    };
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     const { name, value } = e.target;
     this.setState({
       [name]: value
-    })
-  }
-
+    });
+  };
 
   render() {
     return (
       <div>
         {this.props.errorText && <p>{this.props.errorText} </p>}
-        <form className="register-form" onSubmit={(e) => this.props.handleRegister(e, this.state)}>
+        <form
+          className="register-form"
+          onSubmit={e => this.props.handleRegister(e, this.state)}
+        >
           <h2 className="register-title">Register</h2>
           <label htmlFor="name"> name</label>
           <input
@@ -48,6 +51,8 @@ export default class Register extends Component {
           <button> Submit</button>
         </form>
       </div>
-    )
+    );
   }
 }
+
+export default withRouter(Register);
