@@ -1,23 +1,37 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import logo from '../images/logo.png'
+import React from "react";
+import { Link, withRouter } from "react-router-dom";
+import logo from "../images/logo.png";
 
-const Header = (props) => {
+const Header = props => {
+  console.log(localStorage);
   return (
     <div>
-
       <nav>
-        <img src={logo} />
+        <Link to="/">
+          <img src={logo} />
+        </Link>
         <ul>
-          <Link to="/recipes"><li> Browse</li> </Link>
+          <Link to="/recipes">
+            <li> Browse</li>{" "}
+          </Link>
           {/* <Link to="/categories"> <li>Categories</li></Link> */}
-          <Link to="/register"> <li>Register</li></Link>
-          <Link to="/login"> <li>Login</li></Link>
-          <Link to="/user/recipes"><li> My Recipes</li> </Link>
+          <Link to="/register">
+            {" "}
+            <li>Register</li>
+          </Link>
+          <Link to="/login">
+            {" "}
+            <li>Login</li>
+          </Link>
+          {localStorage.getItem("id") && (
+            <Link to="/user_recipes">
+              <li> My Recipes</li>{" "}
+            </Link>
+          )}
         </ul>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default withRouter(Header);

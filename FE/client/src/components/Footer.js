@@ -1,14 +1,12 @@
-import React from 'react'
+import React from "react";
+import { withRouter } from "react-router-dom";
 
-
-const Footer = (props) => {
+const Footer = props => {
   return (
     <div>
-      <h4>
-        created by Carolyn Tambini
-      </h4>
+      <h4>created by Carolyn Tambini</h4>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default withRouter(Footer);
