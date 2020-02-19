@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { createRecipeCall } from '../services/api_helper';
+import { createRecipeCall } from "../services/api_helper";
+import { withRouter } from "react-router-dom";
 
 class CreateRecipe extends Component {
   constructor(props) {
@@ -9,8 +10,8 @@ class CreateRecipe extends Component {
       image: "",
       time: "",
       ingredients: "",
-      direction: "",
-      recipes: []
+      directions: ""
+      // recipes: []
     };
   }
 
@@ -20,46 +21,61 @@ class CreateRecipe extends Component {
   };
 
   createRecipe = async (category, recipeData) => {
-    const newRecipe = await createRecipeCall(category, recipeData)
-    this.setState({
-      recipes: [...this.state.recipes, newRecipe]
-    })
-    this.props.history.push(`/user/recipe`)
+    console.log(category);
+    console.log(recipeData);
+    const newRecipe = await createRecipeCall(category, recipeData);
+    console.log(newRecipe);
+    this.props.history.push(`/user_recipes`);
+  };
 
-  }
-
-
-  handleDropdown = (e) => {
+  handleDropdown = e => {
     this.setState({
       category: e.target.value
-    })
-  }
+    });
+  };
 
   render() {
-    console.log(this.props)
-    const { dishName, image, time, ingredients, direction } = this.state;
+    console.log(this.props);
     return (
       <form
         onSubmit={e => {
           e.preventDefault();
-          this.createRecipe(this.state.category, {
-            "dish_name": this.state.dish_name,
-            "image": this.state.image,
-            "time": this.state.time,
-            "directions": this.state.direction,
-            "ingredients": this.state.ingredients
-          });
+          this.createRecipe(
+            this.state.category,
+
+            {
+              dish_name: this.state.dish_name,
+              image: this.state.image,
+              time: this.state.time,
+              directions: this.state.directions,
+              ingredients: this.state.ingredients
+            }
+          );
         }}
       >
         <label htmlFor="category"> Category</label>
-        <div className="category-select" >
+        <div className="category-select">
           <select onChange={this.handleDropdown}>
             <option> Please select one</option>
-            <option name="Greek" value={1}> Greek</option>
-            <option name="Italian" value={2}> Thai</option>
-            <option name="Cajon and Creole" value={3}>Spanish</option>
-            <option name="Mediterranean" value={4}> Mexican</option>
-            <option name="English" value={5}> American</option>
+            <option name="Greek" value={1}>
+              {" "}
+              Greek
+            </option>
+            <option name="Italian" value={2}>
+              {" "}
+              Thai
+            </option>
+            <option name="Cajon and Creole" value={3}>
+              Spanish
+            </option>
+            <option name="Mediterranean" value={4}>
+              {" "}
+              Mexican
+            </option>
+            <option name="English" value={5}>
+              {" "}
+              American
+            </option>
           </select>
         </div>
         <label htmlFor="title">Dish Name</label>
@@ -94,8 +110,8 @@ class CreateRecipe extends Component {
         <label htmlFor="title">Direction</label>
         <input
           type="text"
-          name="direction"
-          value={this.state.direction}
+          name="directions"
+          value={this.state.directions}
           onChange={this.handleChange}
         />
         <button>Submit</button>
@@ -104,4 +120,4 @@ class CreateRecipe extends Component {
   }
 }
 
-export default CreateRecipe;
+export default withRouter(CreateRecipe);
