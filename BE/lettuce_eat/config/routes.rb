@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post 'register', to: 'users#create'
 
   get 'recipes', to: 'recipes#all_recipes'
-  get 'users/:id/recipes', to: 'recipes#personal_recipes'
+  get 'user/recipes', to: 'recipes#personal_recipes'
 
 
 end
