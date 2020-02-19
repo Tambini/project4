@@ -29,6 +29,10 @@ nav a{
   font-family: 'Heebo', sans-serif;
   font-size: 1.5em
 }
+
+nav a:hover {
+  color:black;
+}
 body{
   margin-top: 125px;
   height: 125vh;
@@ -38,4 +42,32 @@ body{
 li{
   display: flex;
 
+}
+
+.recipe-wrapper{
+  border: 2px solid red;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+.recipe-items{
+  border: 2px solid green;
+  min-width: 30%;
+  margin:10px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.recipes-items a{
+  border:10px solid blue;
+
+}
+
+.welcome-message{
+  display:flex;
+  border:solid black;
+  flex-direction: column;
+  align-items: center;
 }
