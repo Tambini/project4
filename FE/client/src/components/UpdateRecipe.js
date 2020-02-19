@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-
+import { updateRecipe } from "../services/api_helper";
+import { getRecipe } from "../services/api_helper";
+import { withRouter } from "react-router-dom";
 
 class UpdateRecipe extends Component {
   constructor(props) {
@@ -9,27 +11,41 @@ class UpdateRecipe extends Component {
       image: "",
       time: "",
       ingredients: "",
-      description: ""
+      directions: "",
+      recipe: []
     };
   }
 
   componentDidMount = () => {
-    this.setFormData();
+    // this.setCurrentForm();
+    this.getSingleRecipe(
+      this.props.match.params.category,
+      this.props.match.params.id
+    );
   };
 
-  componentDidUpdate = prevProps => {
-    if (prevProps.recipes !== this.props.recipes) {
-      this.setFormData();
-    }
+  getSingleRecipe = async (categoryId, recipeId) => {
+    const recipe = await getRecipe(categoryId, recipeId);
+    this.setState({ recipe });
+    this.setState({
+      dish_name: this.state.recipe.dish_name,
+      image: this.state.recipe.image,
+      time: this.state.recipe.time,
+      ingredients: this.state.recipe.ingredients,
+      directions: this.state.recipe.directions
+    });
   };
 
-  setFormData = () => {
-    if (this.props.recipes.length) {
-      const { dish_name } = this.props.recipes.find(recipe => {
-        return parseInt(recipe.id) === parseInt(this.props.recipeId);
-      });
-      this.setState({ dish_name });
-    }
+  handleDropdown = e => {
+    this.setState({
+      category: e.target.value
+    });
+  };
+
+  updateRecipe = async (e, category_id, id, postData) => {
+    e.preventDefault();
+    const res = await updateRecipe(category_id, id, postData);
+    this.props.history.push(`/user_recipes`);
   };
 
   handleChange = e => {
@@ -40,17 +56,38 @@ class UpdateRecipe extends Component {
   render() {
     return (
       <form
-        onSubmit={e => this.props.updatePost(e, this.props.postId, this.state)}
+        onSubmit={e =>
+          this.updateRecipe(
+            e,
+            this.props.match.params.category,
+            this.props.match.params.id,
+            this.state
+          )
+        }
       >
         <label htmlFor="category"> Category</label>
-        <div className="category-select" >
+        <div className="category-select">
           <select onChange={this.handleDropdown}>
             <option> Please select one</option>
-            <option name="Greek" value={1}> Greek</option>
-            <option name="Italian" value={2}> Thai</option>
-            <option name="Cajon and Creole" value={3}>Spanish</option>
-            <option name="Mediterranean" value={4}> Mexican</option>
-            <option name="English" value={5}> American</option>
+            <option name="Greek" value={1}>
+              {" "}
+              Greek
+            </option>
+            <option name="Italian" value={2}>
+              {" "}
+              Thai
+            </option>
+            <option name="Cajon and Creole" value={3}>
+              Spanish
+            </option>
+            <option name="Mediterranean" value={4}>
+              {" "}
+              Mexican
+            </option>
+            <option name="English" value={5}>
+              {" "}
+              American
+            </option>
           </select>
         </div>
         <label htmlFor="title">Dish Name</label>
@@ -82,11 +119,11 @@ class UpdateRecipe extends Component {
           value={this.state.ingredients}
           onChange={this.handleChange}
         />
-        <label htmlFor="title">Description</label>
+        <label htmlFor="title">Directions</label>
         <input
           type="text"
-          name="description"
-          value={this.state.description}
+          name="directions"
+          value={this.state.directions}
           onChange={this.handleChange}
         />
         <button>Update</button>
@@ -95,5 +132,4 @@ class UpdateRecipe extends Component {
   }
 }
 
-export default UpdateRecipe;
-
+export default withRouter(UpdateRecipe);
