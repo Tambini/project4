@@ -13,9 +13,7 @@ import UserRecipes from "./components/UserRecipes";
 import AllRecipes from "./components/AllRecipes";
 import CreateRecipe from "./components/CreateRecipe";
 import UpdateRecipe from "./components/UpdateRecipe";
-import Homepage from "./components/Homepage";
-import Homepage2 from "./components/Homepage2";
-import Test from "./components/Test";
+import Homepage from "./components/Homepage.js";
 
 class App extends Component {
   constructor(props) {
@@ -75,14 +73,14 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.currentUser ? (
-          <div className="welcome-message">
-            <h1>Welcome, {localStorage.getItem("name")}</h1>
+          <div className="welcome-wrapper">
             <button onClick={this.handleLogout}>Logout</button>
+            <h1 className="welcome-message">
+              Welcome {localStorage.getItem("name")}!
+            </h1>
           </div>
         ) : (
-          <div>
-            <h1>please login to see your recipes</h1>
-          </div>
+          <div>{/* <h1>please login to see your recipes</h1> */}</div>
         )}
         <Header />
 
@@ -109,14 +107,7 @@ class App extends Component {
         <Route path="/recipes/new" component={CreateRecipe} />
         <Route path="/recipes/detail/:category/:id" component={RecipeDetail} />
         <Route path="/recipes/update/:category/:id" component={UpdateRecipe} />
-        <Route
-          exact
-          path="/"
-          render={
-            () => <Homepage />
-            // <Homepage2 />
-          }
-        />
+        <Route exact path="/" render={() => <Homepage />} />
         <Footer />
       </div>
     );
