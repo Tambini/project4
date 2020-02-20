@@ -25,8 +25,13 @@ class AllRecipes extends Component {
             <div key={recipe.id} className="recipe-items">
               {/* <div>{recipe.image}.</div>
               <h3>{recipe.dish_name}</h3> */}
-              <Link to={`/recipes/detail/`}> {recipe.image}</Link>
-              <Link to={`/recipes/detail/`}>{recipe.dish_name}</Link>
+              <Link to={`/recipes/detail/${recipe.category_id}/${recipe.id}`}>
+                {/* {" "} */}
+                <img className="all-recipes-image" src={recipe.image}></img>
+              </Link>
+              <Link to={`/recipes/detail/${recipe.category_id}/${recipe.id}`}>
+                {recipe.dish_name}
+              </Link>
             </div>
           ))}
         </div>
