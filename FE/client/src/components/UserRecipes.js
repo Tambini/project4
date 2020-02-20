@@ -30,15 +30,15 @@ class UserRecipes extends Component {
               <div key={recipe.id} className="recipe-items">
                 <Link to={`/recipes/detail/${recipe.category_id}/${recipe.id}`}>
                   {" "}
-                  {recipe.image}
+                  <img className="recipe-detail-image" src={recipe.image}></img>
                 </Link>
                 <Link to={`/recipes/detail/${recipe.category_id}/${recipe.id}`}>
-                  {recipe.dish_name}
+                  <h1 className="dish-name">{recipe.dish_name}</h1>
                 </Link>
               </div>
             ))}
           <Link to="/recipes/new">
-            <button>Create new Recipe</button>
+            <button>Create New Recipe</button>
           </Link>
         </div>
       </div>
