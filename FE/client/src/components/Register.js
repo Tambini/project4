@@ -20,7 +20,7 @@ class Register extends Component {
 
   render() {
     return (
-      <div>
+      <div className="register-form-wrapper">
         {this.props.errorText && <p>{this.props.errorText} </p>}
         <form
           className="register-form"
