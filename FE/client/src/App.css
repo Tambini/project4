@@ -152,7 +152,8 @@ li {
   padding: 10px;
 }
 
-.all-recipes-dish-name {
+.all-recipes-dish-,
+.dish-name {
   font-size: 20px;
   text-align: center;
   text-decoration: none;
@@ -232,11 +233,19 @@ button:hover {
   flex-direction: column;
   align-items: center;
 }
-.all-recipes-image {
+.all-recipes-image,
+.user-recipe-image {
   height: 450px;
   width: 500px;
   /* width: 90%; */
   object-fit: cover;
+}
+
+.my-recipes-header {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around; */
+  border: red 2px;
 }
 
 .recipe-detail-image {

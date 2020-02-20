@@ -13,7 +13,7 @@ class UserRecipes extends Component {
 
   componentDidMount = async () => {
     console.log("USERRECIPES");
-    const recipes = await allRecipes();
+    const recipes = await getUserRecipes();
     console.log(recipes);
     this.setState({
       recipes,
@@ -24,22 +24,25 @@ class UserRecipes extends Component {
   render() {
     return (
       <div>
+        <div className="my-recipes-header">
+          <h1> My Recipes</h1>
+          <Link to="/recipes/new">
+            <button>Create New Recipe</button>
+          </Link>
+        </div>
         <div className="recipe-wrapper">
           {this.state.apiDataLoaded &&
             this.state.recipes.map(recipe => (
               <div key={recipe.id} className="recipe-items">
                 <Link to={`/recipes/detail/${recipe.category_id}/${recipe.id}`}>
                   {" "}
-                  <img className="recipe-detail-image" src={recipe.image}></img>
+                  <img className="user-recipe-image" src={recipe.image}></img>
                 </Link>
                 <Link to={`/recipes/detail/${recipe.category_id}/${recipe.id}`}>
                   <h1 className="dish-name">{recipe.dish_name}</h1>
                 </Link>
               </div>
             ))}
-          <Link to="/recipes/new">
-            <button>Create New Recipe</button>
-          </Link>
         </div>
       </div>
     );
