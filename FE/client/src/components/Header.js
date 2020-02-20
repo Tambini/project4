@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import logo from "../images/logo.png";
+import logo2 from "../images/logo2.png";
 
 const Header = props => {
   console.log(localStorage);
@@ -8,7 +8,7 @@ const Header = props => {
     <div>
       <nav>
         <Link to="/">
-          <img src={logo} />
+          <img src={logo2} />
         </Link>
         <ul>
           <Link to="/recipes">
