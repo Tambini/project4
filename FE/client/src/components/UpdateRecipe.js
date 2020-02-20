@@ -114,6 +114,7 @@ class UpdateRecipe extends Component {
         />
         <label htmlFor="title">Ingredients</label>
         <input
+          className="ingredients-input"
           type="text"
           name="ingredients"
           value={this.state.ingredients}
@@ -121,6 +122,7 @@ class UpdateRecipe extends Component {
         />
         <label htmlFor="title">Directions</label>
         <input
+          className="directions-input"
           type="text"
           name="directions"
           value={this.state.directions}

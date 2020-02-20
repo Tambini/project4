@@ -31,7 +31,8 @@ nav a:hover {
   color: #f05642;
 }
 
-.register-wrapper {
+.register-wrapper,
+.login-wrapper {
   text-align: center;
   flex-wrap: wrap;
   flex-direction: column;
@@ -45,7 +46,6 @@ nav a:hover {
   align-content: center;
   border: 1px solid rgb(160, 160, 160, 0.5);
   box-shadow: 1px 1px 2px 0.5px #cbcbcb8a;
-  /* margin-top: 10%; */
   margin: auto;
   margin-top: 10%;
 }
@@ -59,10 +59,12 @@ nav a:hover {
   margin: 10%;
   font-family: "Heebo", sans-serif;
 }
-.register-title {
+.register-title,
+.login-title {
   font-size: 40px;
   margin: 2px;
   color: white;
+  text-align: center;
 }
 .switch-sign-in {
   padding: 20px;
@@ -75,6 +77,25 @@ label {
   text-align: left;
   padding: 0px 10px;
   color: #515161;
+}
+.login-form > input {
+  text-align: left;
+  width: 90%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: "Heebo", sans-serif;
+  margin: 20px;
+}
+.preview-recipe-message {
+  color: #515161;
+  font-size: 20px;
+  font-weight: 200;
 }
 
 input {
@@ -91,50 +112,37 @@ input[type="password"] {
   margin-bottom: 20px;
 }
 
-.login-wrapper {
-  text-align: center;
-  color: black;
-  font-family: "Heebo", sans-serif;
-}
-
-.login-form {
-  flex-wrap: wrap;
-  flex-direction: column;
-  background-color: #4da19c;
-  padding: 5px 0 30px 0;
-  margin: 20px;
-  border-radius: 5px;
-  min-width: 300px;
-  max-width: 500px;
-  align-items: center;
-  align-content: center;
-  border: 1px solid rgb(160, 160, 160, 0.5);
-  box-shadow: 1px 1px 2px 0.5px #cbcbcb8a;
-  margin-top: 10%;
-}
-
 li {
   display: flex;
 }
 
-.recipe-wrapper {
-  border: 2px solid red;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-}
-.recipe-items {
-  border: 2px solid green;
-  min-width: 30%;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .recipes-items a {
   border: 10px solid blue;
+}
+.create-form-wrapper {
+  border: 1px solid rgb(160, 160, 160, 0.5);
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  color: #f05642;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: auto;
+}
+.create-form-wrapper > label {
+  text-align: left;
+  color: #f05642;
+}
+
+.create-title {
+  color: #f05642;
+  text-align: center;
+  margin: 2px;
+  font-size: 40px;
+}
+.category-select {
+  padding: 10px;
 }
 
 .welcome-wrapper {
@@ -142,6 +150,7 @@ li {
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
+  margin-top: 10%;
 }
 
 .welcome-message {
@@ -149,13 +158,20 @@ li {
   font-family: "Heebo", sans-serif;
   color: #4da19c;
 }
+
+.directions-input,
+.ingredients-input {
+  width: 750px;
+  height: 250px;
+  margin: 20px;
+}
 .carousel-image {
   height: 550px;
   margin-top: 20px;
 }
 
 .directions {
-  width: 300px;
+  width: fit-content;
 }
 
 .featured-items {
@@ -181,4 +197,48 @@ button:hover {
 
 .arrows {
   font-size: 40px;
+}
+
+.recipe-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+.recipe-items {
+  min-width: 30%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.all-recipes-image {
+  height: 450px;
+  width: 500px;
+  /* width: 90%; */
+  object-fit: cover;
+}
+
+.recipe-detail-image {
+  width: 600px;
+  height: 600px;
+}
+.details-recipe-wrapper {
+  display: flex;
+}
+
+.details-recipes-wrapper > img {
+  align-self: flex-start;
+}
+.details-recipes-wrapper > h1 {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .login-wrapper,
+  .register-wrapper {
+    margin: auto;
+  }
 }

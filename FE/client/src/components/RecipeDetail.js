@@ -43,16 +43,18 @@ class RecipeDetail extends Component {
   render() {
     console.log(this.props);
     return (
-      <div>
-        <h1>{this.state.recipe.dish_name}</h1>
+      <div className="detail-recipe-wrapper">
         <img
           className="recipe-detail-image"
           src={this.state.recipe.image}
         ></img>
-        <h1 className="time">time: {this.state.recipe.time} mins</h1>
-        <h1 className="ingredients">
-          ingredients: {this.state.recipe.ingredients}
-        </h1>
+        <div className="recipe-detail-right">
+          <h1 className="detail-title">{this.state.recipe.dish_name}</h1>
+          <h1 className="time">time: {this.state.recipe.time} mins</h1>
+          <h1 className="ingredients">
+            Ingredients: {this.state.recipe.ingredients}
+          </h1>
+        </div>
         <h1 className="directions">
           Directions: {this.state.recipe.directions}
         </h1>

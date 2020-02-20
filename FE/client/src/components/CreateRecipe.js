@@ -38,6 +38,7 @@ class CreateRecipe extends Component {
     console.log(this.props);
     return (
       <form
+        className="create-form-wrapper"
         onSubmit={e => {
           e.preventDefault();
           this.createRecipe(
@@ -53,6 +54,7 @@ class CreateRecipe extends Component {
           );
         }}
       >
+        <h1 className="create-title">Create a Recipe</h1>
         <label htmlFor="category"> Category</label>
         <div className="category-select">
           <select onChange={this.handleDropdown}>
@@ -101,14 +103,16 @@ class CreateRecipe extends Component {
           onChange={this.handleChange}
         />
         <label htmlFor="title">Ingredients</label>
-        <input
+        <textarea
+          className="ingredients-input"
           type="text"
           name="ingredients"
           value={this.state.ingredients}
           onChange={this.handleChange}
         />
-        <label htmlFor="title">Direction</label>
-        <input
+        <label htmlFor="title">Directions</label>
+        <textarea
+          className="directions-input"
           type="text"
           name="directions"
           value={this.state.directions}

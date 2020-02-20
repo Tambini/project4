@@ -18,13 +18,15 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <div className="login-form-wrapper">
-        <h1>Please login to view your recipes</h1>
+      <div className="login-wrapper">
+        <h1 className="preview-recipe-message">
+          Please login to view your recipes
+        </h1>
         <form
-          className="login-wrapper "
+          className="login-form "
           onSubmit={e => this.props.handleLogin(e, this.state)}
         >
-          <h2>Login</h2>
+          <h2 className="login-title">Login</h2>
           <label htmlFor="email">Email</label>
           <input
             type="text"
