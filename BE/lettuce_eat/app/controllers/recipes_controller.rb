@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_user, only: [:create, :update, :destroy, :personal_recipes]
   before_action :set_category, only: [:show, :update, :destroy, :create]
-  skip_before_action :authorize_request, only: [:all_recipes, :index]
+  skip_before_action :authorize_request, only: [:all_recipes, :index, :show]
 
   # GET /categories/:category_id/recipes
   def index
@@ -24,6 +24,8 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
     json_response(@recipes)
   end
+
+  
 
   # POST /categories/:category_id/recipes
   def create
