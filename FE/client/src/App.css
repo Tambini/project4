@@ -1,4 +1,3 @@
-
 nav {
   top: 0;
   left: 0;
@@ -7,70 +6,140 @@ nav {
   position: fixed;
   display: flex;
   align-items: center;
-  padding:25px;
+  padding: 25px;
   justify-content: flex-start;
-  background-color: white;
-  
-  
+  background: #4da19c;
+  z-index: 1;
 }
-nav img{
+nav img {
   height: 80px;
 }
-nav ul{
+nav ul {
   display: flex;
   flex-direction: row;
- 
 }
-nav a{
+nav a {
   text-decoration: none;
-  color:#3B8268;
+  color: white;
   font-weight: bold;
-  padding:25px;
-  font-family: 'Heebo', sans-serif;
-  font-size: 1.5em
+  padding: 25px;
+  font-family: "Heebo", sans-serif;
+  font-size: 1.5em;
 }
 
 nav a:hover {
-  color:black;
+  color: #f05642;
 }
-body{
-  margin-top: 125px;
-  height: 125vh;
-  padding-top: 15px;
-  background-color: #E7ECE0;
+
+.login-form-wrapper,
+.register-form-wrapper {
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #4da19c;
+  padding: 5px 0 30px 0;
+  margin: 20px;
+  border-radius: 5px;
+  min-width: 300px;
+  max-width: 80%;
+  align-items: center;
+  align-content: center;
+  border: 1px solid rgb(160, 160, 160, 0.5);
+  box-shadow: 1px 1px 2px 0.5px #cbcbcb8a;
 }
-li{
+
+.register-form {
   display: flex;
-
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 10%;
+  font-family: "Heebo", sans-serif;
+}
+label {
+  font-size: 25px;
 }
 
-.recipe-wrapper{
+input {
+  width: 95%;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid rgb(160, 160, 160, 0.5);
+  /* border-radius: px; */
+  outline: 1px solid rgba(255, 255, 255, 0);
+  font-size: 16px;
+}
+
+input[type="password"] {
+  margin-bottom: 20px;
+}
+
+li {
+  display: flex;
+}
+
+.recipe-wrapper {
   border: 2px solid red;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100vw;
 }
-.recipe-items{
+.recipe-items {
   border: 2px solid green;
   min-width: 30%;
-  margin:10px;
-  display:flex;
+  margin: 10px;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
-.recipes-items a{
-  border:10px solid blue;
-
+.recipes-items a {
+  border: 10px solid blue;
 }
 
-.welcome-message{
-  display:flex;
-  border:solid black;
-  flex-direction: column;
+.welcome-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
   align-items: center;
+  justify-content: space-between;
 }
-.carousel-image{
-  max-height: 800px;
+
+.welcome-message {
+  font-size: 40px;
+  font-family: "Heebo", sans-serif;
+  color: #4da19c;
+}
+.carousel-image {
+  height: 550px;
+  margin-top: 20px;
+}
+
+.directions {
+  width: 300px;
+}
+
+.featured-items {
+  text-align: center;
+  font-family: "Heebo", sans-serif;
+  color: #f05642;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+button {
+  color: #f05642;
+  background: white;
+  border: 3px solid #f05642;
+  border-radius: 10px;
+  font-size: 2em;
+}
+
+button:hover {
+  background-color: #f05642;
+  color: white;
+}
+
+.arrows {
+  font-size: 40px;
 }
