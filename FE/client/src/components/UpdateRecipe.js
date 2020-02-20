@@ -56,6 +56,7 @@ class UpdateRecipe extends Component {
   render() {
     return (
       <form
+        className="update-form-wrapper"
         onSubmit={e =>
           this.updateRecipe(
             e,
@@ -65,6 +66,7 @@ class UpdateRecipe extends Component {
           )
         }
       >
+        <h1 className="create-title">Update a Recipe</h1>
         <label htmlFor="category"> Category</label>
         <div className="category-select">
           <select onChange={this.handleDropdown}>

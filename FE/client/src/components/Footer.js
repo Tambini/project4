@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 
 const Footer = props => {
   return (
-    <div>
+    <div className="footer">
       <h4>created by Carolyn Tambini</h4>
     </div>
   );

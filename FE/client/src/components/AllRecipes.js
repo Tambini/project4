@@ -20,6 +20,7 @@ class AllRecipes extends Component {
   render() {
     return (
       <div>
+        <h1 className="all-recipes-title"> All Recipes</h1>
         <div className="recipe-wrapper">
           {this.state.recipes.map(recipe => (
             <div key={recipe.id} className="recipe-items">
@@ -30,7 +31,7 @@ class AllRecipes extends Component {
                 <img className="all-recipes-image" src={recipe.image}></img>
               </Link>
               <Link to={`/recipes/detail/${recipe.category_id}/${recipe.id}`}>
-                {recipe.dish_name}
+                <h1 className="all-recipes-dish-name">{recipe.dish_name}</h1>
               </Link>
             </div>
           ))}

@@ -14,7 +14,7 @@ export default () => {
   const chevronWidth = 40;
   return (
     <div style={{ padding: `0 ${chevronWidth}px` }}>
-      <h1 className="featured-items">Featured Items</h1>
+      <h1 className="featured-items">Featured Recipes</h1>
       <ItemsCarousel
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}

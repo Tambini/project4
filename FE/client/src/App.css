@@ -13,17 +13,19 @@ nav {
 }
 nav img {
   height: 80px;
+  padding: 0px;
 }
 nav ul {
   display: flex;
   flex-direction: row;
+  padding: 0px;
 }
 nav a {
   text-decoration: none;
   color: white;
   font-weight: bold;
   padding: 25px;
-  font-family: "Heebo", sans-serif;
+  /* font-family: "Heebo", sans-serif; */
   font-size: 1.5em;
 }
 
@@ -61,7 +63,8 @@ nav a:hover {
 }
 .register-title,
 .login-title {
-  font-size: 40px;
+  font-size: 35px;
+  font-weight: 200;
   margin: 2px;
   color: white;
   text-align: center;
@@ -89,7 +92,7 @@ label {
   display: flex;
   flex-direction: column;
   color: white;
-  font-family: "Heebo", sans-serif;
+  /* font-family: "Heebo", sans-serif; */
   margin: 20px;
 }
 .preview-recipe-message {
@@ -117,9 +120,10 @@ li {
 }
 
 .recipes-items a {
-  border: 10px solid blue;
+  /* border: 10px solid blue; */
 }
-.create-form-wrapper {
+.create-form-wrapper,
+.update-form-wrapper {
   border: 1px solid rgb(160, 160, 160, 0.5);
   border-radius: 5px;
   background-color: white;
@@ -130,16 +134,29 @@ li {
   max-width: 800px;
   margin: auto;
 }
-.create-form-wrapper > label {
+.create-form-wrapper > label,
+.update-form-wrapper > label {
   text-align: left;
   color: #f05642;
 }
 
-.create-title {
+.create-title,
+.all-recipes-title {
   color: #f05642;
   text-align: center;
   margin: 2px;
   font-size: 40px;
+}
+
+.all-recipes-title {
+  padding: 10px;
+}
+
+.all-recipes-dish-name {
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #f05642;
 }
 .category-select {
   padding: 10px;
@@ -176,18 +193,19 @@ li {
 
 .featured-items {
   text-align: center;
-  font-family: "Heebo", sans-serif;
+  /* font-family: "Heebo", sans-serif; */
   color: #f05642;
   font-size: 40px;
   font-weight: 600;
+  margin-top: 10%;
 }
 
 button {
   color: #f05642;
   background: white;
   border: 3px solid #f05642;
-  border-radius: 10px;
-  font-size: 2em;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 button:hover {
@@ -196,7 +214,8 @@ button:hover {
 }
 
 .arrows {
-  font-size: 40px;
+  font-size: 50px;
+  color: #f05642;
 }
 
 .recipe-wrapper {
@@ -236,6 +255,13 @@ button:hover {
   align-items: flex-end;
 }
 
+.footer {
+  font-size: 15px;
+  font-weight: 100;
+  color: #515161;
+  text-align: center;
+  /* position: fixed; */
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .login-wrapper,
   .register-wrapper {
