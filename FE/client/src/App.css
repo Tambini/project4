@@ -31,8 +31,8 @@ nav a:hover {
   color: #f05642;
 }
 
-.login-form-wrapper,
-.register-form-wrapper {
+.register-wrapper {
+  text-align: center;
   flex-wrap: wrap;
   flex-direction: column;
   background-color: #4da19c;
@@ -40,11 +40,14 @@ nav a:hover {
   margin: 20px;
   border-radius: 5px;
   min-width: 300px;
-  max-width: 80%;
+  max-width: 500px;
   align-items: center;
   align-content: center;
   border: 1px solid rgb(160, 160, 160, 0.5);
   box-shadow: 1px 1px 2px 0.5px #cbcbcb8a;
+  /* margin-top: 10%; */
+  margin: auto;
+  margin-top: 10%;
 }
 
 .register-form {
@@ -56,8 +59,22 @@ nav a:hover {
   margin: 10%;
   font-family: "Heebo", sans-serif;
 }
+.register-title {
+  font-size: 40px;
+  margin: 2px;
+  color: white;
+}
+.switch-sign-in {
+  padding: 20px;
+  text-decoration: none;
+  color: #515161;
+}
+
 label {
-  font-size: 25px;
+  font-size: 15px;
+  text-align: left;
+  padding: 0px 10px;
+  color: #515161;
 }
 
 input {
@@ -72,6 +89,28 @@ input {
 
 input[type="password"] {
   margin-bottom: 20px;
+}
+
+.login-wrapper {
+  text-align: center;
+  color: black;
+  font-family: "Heebo", sans-serif;
+}
+
+.login-form {
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #4da19c;
+  padding: 5px 0 30px 0;
+  margin: 20px;
+  border-radius: 5px;
+  min-width: 300px;
+  max-width: 500px;
+  align-items: center;
+  align-content: center;
+  border: 1px solid rgb(160, 160, 160, 0.5);
+  box-shadow: 1px 1px 2px 0.5px #cbcbcb8a;
+  margin-top: 10%;
 }
 
 li {

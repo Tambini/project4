@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 class Register extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="register-form-wrapper">
+      <div className="register-wrapper">
         {this.props.errorText && <p>{this.props.errorText} </p>}
         <form
           className="register-form"
@@ -49,6 +49,9 @@ class Register extends Component {
             onChange={this.handleChange}
           />
           <button> Submit</button>
+          <Link to="/login" className="switch-sign-in">
+            Login
+          </Link>
         </form>
       </div>
     );

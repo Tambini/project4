@@ -19,8 +19,12 @@ class LoginForm extends Component {
   render() {
     return (
       <div className="login-form-wrapper">
-        <form onSubmit={e => this.props.handleLogin(e, this.state)}>
-          <h2>Please login to view your recipes</h2>
+        <h1>Please login to view your recipes</h1>
+        <form
+          className="login-wrapper "
+          onSubmit={e => this.props.handleLogin(e, this.state)}
+        >
+          <h2>Login</h2>
           <label htmlFor="email">Email</label>
           <input
             type="text"
@@ -36,7 +40,9 @@ class LoginForm extends Component {
             onChange={this.handleChange}
           />
           <button>Submit</button>
-          <Link to="/register">Register</Link>
+          <Link to="/register" className="switch-sign-in">
+            Register
+          </Link>
         </form>
       </div>
     );
