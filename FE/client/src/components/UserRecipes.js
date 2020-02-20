@@ -25,9 +25,9 @@ class UserRecipes extends Component {
     return (
       <div>
         <div className="my-recipes-header">
-          <h1> My Recipes</h1>
+          <h1 className="user-title"> My Recipes</h1>
           <Link to="/recipes/new">
-            <button>Create New Recipe</button>
+            <button className="create-new-button">Create New Recipe</button>
           </Link>
         </div>
         <div className="recipe-wrapper">
