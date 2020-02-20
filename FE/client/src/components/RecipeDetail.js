@@ -10,17 +10,22 @@ class RecipeDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipe: []
+      recipe: [],
+      showButtons: false
     };
   }
 
   componentDidMount() {
-    console.log(this.props);
     verifyUser();
     this.getSingleRecipe(
       this.props.match.params.category,
       this.props.match.params.id
     );
+    console.log("authToken", localStorage.getItem("authToken"));
+    localStorage.getItem("authToken") &&
+      this.setState({
+        showButtons: true
+      });
   }
 
   getSingleRecipe = async (categoryId, recipeId) => {
@@ -40,26 +45,38 @@ class RecipeDetail extends Component {
     return (
       <div>
         <h1>{this.state.recipe.dish_name}</h1>
-        <h1>{this.state.recipe.image}</h1>
-        <h1>{this.state.recipe.time}</h1>
-        <h1>{this.state.recipe.ingredients}</h1>
-        <h1>{this.state.recipe.directions}</h1>
-        <Link
-          to={`/recipes/update/${this.state.recipe.category_id}/${this.state.recipe.id}`}
-        >
-          <button>Update</button>
-        </Link>
-        <button
-          onClick={e =>
-            this.deleteRecipe(
-              e,
-              this.state.recipe.category_id,
-              this.state.recipe.id
-            )
-          }
-        >
-          Delete
-        </button>
+        <img
+          className="recipe-detail-image"
+          src={this.state.recipe.image}
+        ></img>
+        <h1 className="time">time: {this.state.recipe.time} mins</h1>
+        <h1 className="ingredients">
+          ingredients: {this.state.recipe.ingredients}
+        </h1>
+        <h1 className="directions">
+          Directions: {this.state.recipe.directions}
+        </h1>
+
+        {this.state.showButtons && (
+          <>
+            <Link
+              to={`/recipes/update/${this.state.recipe.category_id}/${this.state.recipe.id}`}
+            >
+              <button>Update</button>
+            </Link>
+            <button
+              onClick={e =>
+                this.deleteRecipe(
+                  e,
+                  this.state.recipe.category_id,
+                  this.state.recipe.id
+                )
+              }
+            >
+              Delete
+            </button>
+          </>
+        )}
       </div>
     );
   }
